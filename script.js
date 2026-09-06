@@ -34,10 +34,16 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', handleNavbarScroll);
     handleNavbarScroll();
 
-    // 3. TYPEWRITER EFFECT
+    // 3. TYPEWRITER EFFECT (WITH DIRECT FALLBACK WORDS)
     const typewriterElement = document.getElementById('typewriter');
     if (typewriterElement) {
-        const words = JSON.parse(typewriterElement.getAttribute('data-words') || '[]');
+        let words = [
+            "Computer Science Engineering Student", 
+            "2nd Year CSE Student", 
+            "Aspiring Developer", 
+            "Tech Enthusiast"
+        ];
+
         let wordIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
@@ -69,9 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(type, typeSpeed);
         };
 
-        if (words.length > 0) {
-            setTimeout(type, 500);
-        }
+        setTimeout(type, 300);
     }
 
     // 4. ACTIVE NAV LINK ON SCROLL
