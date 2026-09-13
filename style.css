@@ -878,18 +878,6 @@ textarea.form-control {
     40% { transform: translateY(-8px); }
     60% { transform: translateY(-4px); }
 }
-/* Typewriter animation styling cursor */
-.cursor {
-    display: inline-block;
-    width: 2px;
-    background-color: var(--color-primary);
-    margin-left: 4px;
-    animation: blink 0.75s step-end infinite;
-}
-@keyframes blink {
-    from, to { background-color: transparent }
-    50% { background-color: var(--color-primary); }
-}
 /* 
    ==========================================================================
    RESPONSIVE DESIGN BREAKPOINTS

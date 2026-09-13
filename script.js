@@ -34,51 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', handleNavbarScroll);
     handleNavbarScroll();
 
-    // 3. TYPEWRITER EFFECT (WITH DIRECT FALLBACK WORDS)
-    const typewriterElement = document.getElementById('typewriter');
-    if (typewriterElement) {
-        let words = [
-            "Computer Science Engineering Student", 
-            "2nd Year CSE Student", 
-            "Aspiring Developer", 
-            "Tech Enthusiast"
-        ];
-
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        let currentText = '';
-
-        const type = () => {
-            const currentWord = words[wordIndex];
-            if (isDeleting) {
-                currentText = currentWord.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                currentText = currentWord.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
-            typewriterElement.textContent = currentText;
-
-            let typeSpeed = isDeleting ? 40 : 80;
-
-            if (!isDeleting && currentText === currentWord) {
-                typeSpeed = 2000;
-                isDeleting = true;
-            } else if (isDeleting && currentText === '') {
-                isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length;
-                typeSpeed = 500;
-            }
-
-            setTimeout(type, typeSpeed);
-        };
-
-        setTimeout(type, 300);
-    }
-
-    // 4. ACTIVE NAV LINK ON SCROLL
+    // 3. ACTIVE NAV LINK ON SCROLL
     const sections = document.querySelectorAll('section');
     const navItems = document.querySelectorAll('.nav-link');
     const observerOptions = {
